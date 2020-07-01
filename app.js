@@ -1,5 +1,5 @@
 var express=require('express');
-
+var goodsListConstroller =require('./constroller/goodsListConstroller')
 
 var app=new express();
 
@@ -14,5 +14,8 @@ app.all('*', function(req, res, next) {
 })
 
 app.use(express.static('public'));
+
+goodsListConstroller(app);
+
 
 app.listen(3333);
