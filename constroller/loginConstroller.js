@@ -29,9 +29,12 @@ module.exports=function(app){
     })
 
     app.get('/GetUser',function(req,res){
+        let userNameArr=req._parsedOriginalUrl.query.split('=');
         UserList.find({},function(err,data){
+            console.log(data);
             if(err) throw err;
-            res.json(data.body);
+            console.log(data);
+            res.json(data);
         })
     })
 }
