@@ -1,6 +1,6 @@
 var express=require('express');
-var goodsListConstroller =require('./constroller/goodsListConstroller')
-
+var goodsListConstroller =require('./constroller/goodsListConstroller');
+var loginConstroller =require('./constroller/loginConstroller');
 var app=new express();
 
 // 解决跨域问题
@@ -16,6 +16,7 @@ app.all('*', function(req, res, next) {
 app.use(express.static('public'));
 
 goodsListConstroller(app);
+loginConstroller(app);
 
 
 app.listen(3333);
